@@ -19,7 +19,6 @@ void print_request_line(request_line_t rl)
 void TcpHandler::handle(int fd)
 {
     TcpHandler * handler = new TcpHandler(fd);
-    // std::string method = handler->getMethod();
 
     int valread;
     char buffer[1024] = {0}; 
@@ -30,8 +29,6 @@ void TcpHandler::handle(int fd)
     print_request_line(rt);
     handler->switch_on_method(rt.method_token);
     
-    // std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    // send(fd , "Hello there" , strlen("Hello there") , 0);
     shutdown(fd, 1);
 }
 

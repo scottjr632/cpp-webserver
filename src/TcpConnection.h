@@ -24,7 +24,6 @@ class TcpConnection
 
     private:
         const char*     m_ipAddress;    // IP address the server will run on
-        const char*     m_serverMsg;     // Default message from the server
         int             m_port;         // Port # for the web service
         int             m_socket;       // Internal FD for the listening socket
         fd_set          m_master;       // Master file descriptor set
